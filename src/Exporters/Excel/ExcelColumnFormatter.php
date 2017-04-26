@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the Shepherd Jobs project.
+ * This file is part of the Export project.
  *
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
@@ -28,7 +29,7 @@ class ExcelColumnFormatter implements ExcelColumnFormatterInterface
      *
      * ExcelColumnFormatter constructor.
      * @param PHPExcel_Worksheet $active_sheet
-     * @param string $column_key
+     * @param string             $column_key
      */
     public function __construct(PHPExcel_Worksheet $active_sheet, string $column_key)
     {
@@ -39,7 +40,7 @@ class ExcelColumnFormatter implements ExcelColumnFormatterInterface
     /**
      * Set column label.
      *
-     * @param string $value
+     * @param  string                        $value
      * @return ExcelColumnFormatterInterface $this
      */
     public function setColumnLabel(string $value): ExcelColumnFormatterInterface
@@ -53,7 +54,7 @@ class ExcelColumnFormatter implements ExcelColumnFormatterInterface
     /**
      * Format column align.
      *
-     * @param string $value
+     * @param  string                        $value
      * @return ExcelColumnFormatterInterface $this
      */
     public function formatAlign(string $value): ExcelColumnFormatterInterface
@@ -83,7 +84,7 @@ class ExcelColumnFormatter implements ExcelColumnFormatterInterface
     /**
      * Format column type.
      *
-     * @param string $value
+     * @param  string                        $value
      * @return ExcelColumnFormatterInterface $this
      */
     public function formatType(string $value): ExcelColumnFormatterInterface
@@ -117,7 +118,7 @@ class ExcelColumnFormatter implements ExcelColumnFormatterInterface
     /**
      * Format column size.
      *
-     * @param string $value
+     * @param  string                        $value
      * @return ExcelColumnFormatterInterface $this
      */
     public function formatSize(string $value): ExcelColumnFormatterInterface
@@ -152,11 +153,11 @@ class ExcelColumnFormatter implements ExcelColumnFormatterInterface
     /**
      * Prepare column cell for header.
      *
-     * @param string $background
-     * @param PHPExcel_Style_Alignment|null $align
-     * @param bool $freeze
-     * @param bool $filter
-     * @param string $start
+     * @param  string                        $background
+     * @param  PHPExcel_Style_Alignment|null $align
+     * @param  bool                          $freeze
+     * @param  bool                          $filter
+     * @param  string                        $start
      * @return ExcelColumnFormatterInterface
      */
     public function prepareForHeader(

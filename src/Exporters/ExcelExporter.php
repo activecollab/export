@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the Shepherd Jobs project.
+ * This file is part of the Export project.
  *
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
@@ -47,7 +48,7 @@ abstract class ExcelExporter implements ExporterInterface
      *
      *
      * @param array $columns
-     * @param bool $format
+     * @param bool  $format
      */
     protected function setColumnRow(array $columns, bool $format = true)
     {
@@ -79,8 +80,8 @@ abstract class ExcelExporter implements ExporterInterface
     /**
      * Save file.
      *
-     * @param string $path
-     * @param string $format
+     * @param  string $path
+     * @param  string $format
      * @return mixed
      */
     protected function save(string $path, string $format = 'Excel2007')

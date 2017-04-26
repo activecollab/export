@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the Shepherd Jobs project.
+ * This file is part of the Export project.
  *
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
@@ -16,7 +17,6 @@ use Exception;
 /**
  * @package ActiveCollab\Exporter
  */
-
 class ExporterFactory implements ExporterFactoryInterface
 {
     const EXPORTER_NAMESPACE = 'ActiveCollab\\Exporter\\Exporters\\';
@@ -24,8 +24,8 @@ class ExporterFactory implements ExporterFactoryInterface
     /**
      * Get exporter for.
      *
-     * @param string $type
-     * @param string $format
+     * @param  string            $type
+     * @param  string            $format
      * @return ExporterInterface
      * @throws Exception
      */

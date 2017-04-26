@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the Shepherd Jobs project.
+ * This file is part of the Export project.
  *
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
@@ -15,7 +16,7 @@ namespace ActiveCollab\Exporter;
 interface ExportAsTableInterface
 {
     /**
-     * @param array ...$args
+     * @param  array                            ...$args
      * @return iterable|ExportColumnInterface[]
      */
     public function getColumns(...$args): iterable;

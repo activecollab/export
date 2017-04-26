@@ -1,10 +1,13 @@
 <?php
 
 /*
- * This file is part of the Shepherd Jobs Consumer project.
+ * This file is part of the Export project.
  *
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
+
+
+
 
 declare(strict_types=1);
 
@@ -48,55 +51,55 @@ class ExportAsTableTest extends TestCase
                 'name' => 'id',
                 'type' => ExportColumnInterface::COLUMN_TYPE_INT,
                 'width' => ExportColumnInterface::COLUMN_WIDTH_SMALL,
-                'align' => ExportColumnInterface::COLUMN_ALIGN_LEFT
+                'align' => ExportColumnInterface::COLUMN_ALIGN_LEFT,
             ],
             [
                 'name' => 'name',
                 'type' => ExportColumnInterface::COLUMN_TYPE_STRING,
                 'width' => ExportColumnInterface::COLUMN_WIDTH_MEDIUM,
-                'align' => ExportColumnInterface::COLUMN_ALIGN_LEFT
+                'align' => ExportColumnInterface::COLUMN_ALIGN_LEFT,
             ],
             [
                 'name' => 'body',
                 'type' => ExportColumnInterface::COLUMN_TYPE_STRING,
                 'width' => ExportColumnInterface::COLUMN_WIDTH_MEDIUM,
-                'align' => ExportColumnInterface::COLUMN_ALIGN_CENTER
+                'align' => ExportColumnInterface::COLUMN_ALIGN_CENTER,
             ],
             [
                 'name' => 'due_on',
                 'type' => ExportColumnInterface::COLUMN_TYPE_DATE,
                 'width' => ExportColumnInterface::COLUMN_WIDTH_NORMAL,
-                'align' => ExportColumnInterface::COLUMN_ALIGN_RIGHT
+                'align' => ExportColumnInterface::COLUMN_ALIGN_RIGHT,
             ],
             [
                 'name' => 'value',
                 'type' => ExportColumnInterface::COLUMN_TYPE_FLOAT,
                 'width' => ExportColumnInterface::COLUMN_WIDTH_NORMAL,
-                'align' => ExportColumnInterface::COLUMN_ALIGN_LEFT
+                'align' => ExportColumnInterface::COLUMN_ALIGN_LEFT,
             ],
             [
                 'name' => 'amount',
                 'type' => ExportColumnInterface::COLUMN_TYPE_FLOAT,
                 'width' => ExportColumnInterface::COLUMN_WIDTH_SMALL,
-                'align' => ExportColumnInterface::COLUMN_ALIGN_CENTER
+                'align' => ExportColumnInterface::COLUMN_ALIGN_CENTER,
             ],
             [
                 'name' => 'created_by_id',
                 'type' => ExportColumnInterface::COLUMN_TYPE_INT,
                 'width' => ExportColumnInterface::COLUMN_WIDTH_SMALL,
-                'align' => ExportColumnInterface::COLUMN_ALIGN_LEFT
+                'align' => ExportColumnInterface::COLUMN_ALIGN_LEFT,
             ],
             [
                 'name' => 'created_by_email',
                 'type' => ExportColumnInterface::COLUMN_TYPE_STRING,
                 'width' => ExportColumnInterface::COLUMN_WIDTH_SMALL,
-                'align' => ExportColumnInterface::COLUMN_ALIGN_RIGHT
+                'align' => ExportColumnInterface::COLUMN_ALIGN_RIGHT,
             ],
             [
                 'name' => 'created_on',
                 'type' => ExportColumnInterface::COLUMN_TYPE_DATE,
                 'width' => ExportColumnInterface::COLUMN_WIDTH_SMALL,
-                'align' => ExportColumnInterface::COLUMN_ALIGN_AUTO
+                'align' => ExportColumnInterface::COLUMN_ALIGN_AUTO,
             ],
         ];
 
@@ -114,7 +117,7 @@ class ExportAsTableTest extends TestCase
                 'amount' => 10 + $i,
                 'created_by_id' => 1,
                 'created_by_email' => 'test@activecollab.com',
-                'created_on' => "{$y}-{$m}-06"
+                'created_on' => "{$y}-{$m}-06",
             ];
 
             $m++;

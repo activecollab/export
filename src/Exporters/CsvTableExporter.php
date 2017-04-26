@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the Shepherd Jobs project.
+ * This file is part of the Export project.
  *
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
@@ -20,7 +21,7 @@ class CsvTableExporter extends ExcelExporter
 
     /**
      * @param $object
-     * @param string $path
+     * @param  string    $path
      * @return string
      * @throws Exception
      */

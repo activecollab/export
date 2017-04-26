@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the Shepherd Jobs project.
+ * This file is part of the Export project.
  *
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
@@ -18,7 +19,7 @@ interface ExporterInterface
      * Export data.
      *
      * @param $objects
-     * @param string $path
+     * @param  string $path
      * @return string
      */
     public function export($objects, string $path): string;

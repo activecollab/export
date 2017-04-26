@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the Active Collab Multi Account project.
+ * This file is part of the Export project.
  *
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
@@ -11,8 +12,8 @@ namespace ActiveCollab\Exporter\Test\Mocks;
 
 use ActiveCollab\Exporter\ExportableInterface;
 use ActiveCollab\Exporter\ExportAsTableInterface;
-use ActiveCollab\Exporter\ExportColumnInterface;
 use ActiveCollab\Exporter\ExportColumn;
+use ActiveCollab\Exporter\ExportColumnInterface;
 use Doctrine\Common\Inflector\Inflector;
 
 class TableExporterMock extends MockBase implements ExportableInterface, ExportAsTableInterface
@@ -34,7 +35,7 @@ class TableExporterMock extends MockBase implements ExportableInterface, ExportA
     /**
      * Get exporter path.
      *
-     * @param string $type
+     * @param  string $type
      * @return string
      */
     public function getExportPath(string $type): string
@@ -45,7 +46,7 @@ class TableExporterMock extends MockBase implements ExportableInterface, ExportA
     }
 
     /**
-     * @param array ...$args
+     * @param  array                            ...$args
      * @return iterable|ExportColumnInterface[]
      */
     public function getColumns(...$args): iterable

@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the Shepherd Jobs project.
+ * This file is part of the Export project.
  *
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
@@ -32,9 +33,9 @@ class ExporterManager implements ExporterManagerInterface
     /**
      * Get export.
      *
-     * @param ExportableInterface $object
-     * @param string $type
-     * @param string $format
+     * @param  ExportableInterface $object
+     * @param  string              $type
+     * @param  string              $format
      * @return string
      */
     public function export(ExportableInterface $object, string $type, string $format): string

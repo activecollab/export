@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the Shepherd Jobs project.
+ * This file is part of the Export project.
  *
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
@@ -31,7 +32,7 @@ interface ExportColumnInterface
         self::COLUMN_TYPE_INT,
         self::COLUMN_TYPE_FLOAT,
         self::COLUMN_TYPE_STRING,
-        self::COLUMN_TYPE_DATE
+        self::COLUMN_TYPE_DATE,
     ];
 
     const COLUMN_ALIGNS = [
@@ -45,7 +46,7 @@ interface ExportColumnInterface
         self::COLUMN_WIDTH_SMALL,
         self::COLUMN_WIDTH_NORMAL,
         self::COLUMN_WIDTH_MEDIUM,
-        self::COLUMN_WIDTH_WIDE
+        self::COLUMN_WIDTH_WIDE,
     ];
 
     /**

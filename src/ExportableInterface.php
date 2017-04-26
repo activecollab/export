@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the Shepherd Jobs project.
+ * This file is part of the Export project.
  *
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
@@ -17,7 +18,7 @@ interface ExportableInterface
     /**
      * Get exporter path.
      *
-     * @param string $type
+     * @param  string $type
      * @return string
      */
     public function getExportPath(string $type): string;

@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the Shepherd Jobs project.
+ * This file is part of the Export project.
  *
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
@@ -19,8 +20,8 @@ interface ExporterFactoryInterface
     /**
      * Get exporter for.
      *
-     * @param string $type
-     * @param string $format
+     * @param  string            $type
+     * @param  string            $format
      * @return ExporterInterface
      */
     public function getExporterFor(string $type, string $format): ExporterInterface;
