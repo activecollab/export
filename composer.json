@@ -1,0 +1,40 @@
+{
+    "name": "activecollab/exporter",
+    "description": "Exporter package",
+    "type": "package",
+    "license": "proprietary",
+    "minimum-stability": "stable",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "ssh2.sftp://packages.activecollab.com/var/www/packages.activecollab.com/satis/web",
+            "options": {
+                "ssh2": {
+                    "username": "composer",
+                    "pubkey_file": "/Users/aleksandar/.ssh/id_satis.pub",
+                    "privkey_file": "/Users/aleksandar/.ssh/id_satis"
+                }
+            }
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "monolog/monolog": "^1.17.0",
+        "symfony/console": "^3.0",
+        "doctrine/inflector": "^1.1.0",
+        "phpoffice/phpexcel": "^1.8"
+    },
+
+    "require-dev": {
+        "acclimate/container": "^1.0",
+        "friendsofphp/php-cs-fixer": "^1.0",
+        "phpunit/phpunit": "^5.0",
+        "pimple/pimple": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ActiveCollab\\Exporter\\": "src",
+            "ActiveCollab\\Exporter\\Test\\": "test/src"
+        }
+    }
+}
