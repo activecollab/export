@@ -1,32 +1,21 @@
 {
-    "name": "activecollab/exporter",
+    "name": "activecollab/export",
     "description": "Exporter package",
     "type": "package",
-    "license": "proprietary",
+    "license": "MIT",
     "minimum-stability": "stable",
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "ssh2.sftp://packages.activecollab.com/var/www/packages.activecollab.com/satis/web",
-            "options": {
-                "ssh2": {
-                    "username": "composer",
-                    "pubkey_file": "/Users/aleksandar/.ssh/id_satis.pub",
-                    "privkey_file": "/Users/aleksandar/.ssh/id_satis"
-                }
-            }
-        }
-    ],
     "require": {
         "php": ">=7.1",
-        "symfony/console": "^3.0",
-        "doctrine/inflector": "^1.1.0",
-        "phpoffice/phpexcel": "^1.8"
+        "doctrine/inflector": "^1.1.0"
     },
-
+    "suggest" : {
+        "phpoffice/phpexcel": "Allow export to CSV and XSLS format."
+    },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.0",
-        "phpunit/phpunit": "^5.0"
+        "phpoffice/phpexcel": "^1.8",
+        "phpunit/phpunit": "^5.0",
+        "symfony/console": "^3.0"
     },
     "autoload": {
         "psr-4": {

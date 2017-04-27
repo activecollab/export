@@ -1,10 +1,11 @@
 <?php
 
 /*
- * This file is part of the Export project.
+ * This file is part of the Active Collab Export project.
  *
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
+
 
 declare(strict_types=1);
 
@@ -15,9 +16,6 @@ use ActiveCollab\Exporter\Exporters\Excel\ExcelColumnFormatter;
 use PHPExcel;
 use PHPExcel_IOFactory;
 
-/**
- * @package ActiveCollab\Exporter
- */
 abstract class ExcelExporter implements ExporterInterface
 {
     public $php_excel;

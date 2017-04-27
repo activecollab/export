@@ -1,10 +1,11 @@
 <?php
 
 /*
- * This file is part of the Export project.
+ * This file is part of the Active Collab Export project.
  *
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
+
 
 declare(strict_types=1);
 
@@ -14,9 +15,6 @@ use ActiveCollab\Exporter\Exporters\ExporterInterface;
 use Doctrine\Common\Inflector\Inflector;
 use Exception;
 
-/**
- * @package ActiveCollab\Exporter
- */
 class ExporterFactory implements ExporterFactoryInterface
 {
     const EXPORTER_NAMESPACE = 'ActiveCollab\\Exporter\\Exporters\\';
