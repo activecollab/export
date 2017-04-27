@@ -15,13 +15,6 @@ use Exception;
 
 class CsvTableExporter extends ExcelExporter
 {
-
-    /**
-     * @param $object
-     * @param  string    $path
-     * @return string
-     * @throws Exception
-     */
     public function export($object, string $path): string
     {
         if (!($object instanceof ExportAsTableInterface)) {

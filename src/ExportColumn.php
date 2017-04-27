@@ -14,34 +14,14 @@ use Exception;
 
 class ExportColumn implements ExportColumnInterface
 {
-    /**
-     * @var string
-     */
     private $name;
 
-    /**
-     * @var string
-     */
     private $type;
 
-    /**
-     * @var string
-     */
     private $width;
 
-    /**
-     * @var string
-     */
     private $align;
 
-    /**
-     * ExportColumn constructor.
-     *
-     * @param string $name
-     * @param string $type
-     * @param string $width
-     * @param string $align
-     */
     public function __construct(string $name, string $type, string $width = 'auto', string $align = 'auto')
     {
         $this->name = $name;
@@ -50,21 +30,11 @@ class ExportColumn implements ExportColumnInterface
         $this->align = $align;
     }
 
-    /**
-     * Get column.
-     *
-     * @return string
-     */
     public function getColumnName(): string
     {
         return $this->name;
     }
 
-    /**
-     * Column type.
-     *
-     * @throws Exception
-     */
     public function getColumnType(): string
     {
         $types = self::COLUMN_TYPES;
@@ -77,11 +47,6 @@ class ExportColumn implements ExportColumnInterface
         }
     }
 
-    /**
-     * Column width.
-     *
-     * @return string
-     */
     public function getWidth(): string
     {
         $size = self::COLUMN_WIDTHS;
@@ -94,11 +59,6 @@ class ExportColumn implements ExportColumnInterface
         }
     }
 
-    /**
-     * Column align.
-     *
-     * @return string
-     */
     public function getAlign(): string
     {
         $align = self::COLUMN_ALIGNS;

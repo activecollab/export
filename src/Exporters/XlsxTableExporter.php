@@ -15,15 +15,6 @@ use Exception;
 
 class XlsxTableExporter extends ExcelExporter
 {
-
-    /**
-     * Export data as table.
-     *
-     * @param $object
-     * @param  string    $path
-     * @return string
-     * @throws Exception
-     */
     public function export($object, string $path): string
     {
         if (!($object instanceof ExportAsTableInterface)) {

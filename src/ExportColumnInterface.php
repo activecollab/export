@@ -49,23 +49,11 @@ interface ExportColumnInterface
         self::COLUMN_WIDTH_WIDE,
     ];
 
-    /**
-     * @return string
-     */
     public function getColumnName(): string;
 
-    /**
-     * @return string
-     */
     public function getColumnType(): string;
 
-    /**
-     * @return string
-     */
     public function getWidth(): string;
 
-    /**
-     * @return string
-     */
     public function getAlign(): string;
 }

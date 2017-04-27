@@ -14,12 +14,5 @@ use ActiveCollab\Exporter\Exporters\ExporterInterface;
 
 interface ExporterFactoryInterface
 {
-    /**
-     * Get exporter for.
-     *
-     * @param  string            $type
-     * @param  string            $format
-     * @return ExporterInterface
-     */
     public function getExporterFor(string $type, string $format): ExporterInterface;
 }

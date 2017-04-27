@@ -10,15 +10,7 @@ declare(strict_types=1);
 
 namespace ActiveCollab\Exporter;
 
-interface ExporterManagerInterface
+interface ExportManagerInterface
 {
-    /**
-     * Get export.
-     *
-     * @param  ExportableInterface $object
-     * @param  string              $type
-     * @param  string              $format
-     * @return string
-     */
     public function export(ExportableInterface $object, string $type, string $format): string;
 }

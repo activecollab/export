@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace ActiveCollab\Exporter\Test\Mocks;
 
 use ActiveCollab\Exporter\ExporterFactory;
-use ActiveCollab\Exporter\ExporterManager;
+use ActiveCollab\Exporter\ExportManager;
 
 class MockBase
 {
@@ -24,6 +24,6 @@ class MockBase
     public function __construct($name = null, array $data = [], $dataName = '')
     {
         $this->exporter_factory = new ExporterFactory();
-        $this->exporter_manager = new ExporterManager($this->exporter_factory);
+        $this->exporter_manager = new ExportManager($this->exporter_factory);
     }
 }

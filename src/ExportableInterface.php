@@ -12,11 +12,5 @@ namespace ActiveCollab\Exporter;
 
 interface ExportableInterface
 {
-    /**
-     * Get exporter path.
-     *
-     * @param  string $type
-     * @return string
-     */
     public function getExportPath(string $type): string;
 }

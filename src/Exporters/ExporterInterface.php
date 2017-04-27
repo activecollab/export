@@ -12,12 +12,5 @@ namespace ActiveCollab\Exporter\Exporters;
 
 interface ExporterInterface
 {
-    /**
-     * Export data.
-     *
-     * @param $objects
-     * @param  string $path
-     * @return string
-     */
     public function export($objects, string $path): string;
 }

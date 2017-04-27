@@ -14,7 +14,6 @@ use PHPExcel_Style_Alignment;
 
 interface ExcelColumnFormatterInterface
 {
-
     /**
      * Set column label.
      *
