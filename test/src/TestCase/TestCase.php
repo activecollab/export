@@ -25,6 +25,9 @@ abstract class TestCase extends  PHPUnit_Framework_TestCase
     {
         parent::setUp();
 
+        if (!is_dir(self::WORK_FOLDER)) {
+            mkdir(self::WORK_FOLDER);
+        }
     }
 
     public function tearDown()
