@@ -20,7 +20,7 @@ use Symfony\Component\Finder\SplFileInfo;
 abstract class TestCase extends  PHPUnit_Framework_TestCase
 {
     const WORK_FOLDER = __DIR__ . '/../../work';
-    const DONT_DELETE = ['.gitkeep', '.gitignore'];
+    const DONT_DELETE = ['.gitignore'];
 
     public function setUp()
     {
