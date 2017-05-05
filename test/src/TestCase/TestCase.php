@@ -20,14 +20,11 @@ use Symfony\Component\Finder\SplFileInfo;
 abstract class TestCase extends  PHPUnit_Framework_TestCase
 {
     const WORK_FOLDER = __DIR__ . '/../../work';
+    const DONT_DELETE = ['.gitkeep', '.gitignore'];
 
     public function setUp()
     {
         parent::setUp();
-
-        if (!is_dir(self::WORK_FOLDER)) {
-            mkdir(self::WORK_FOLDER);
-        }
     }
 
     public function tearDown()
@@ -39,7 +36,11 @@ abstract class TestCase extends  PHPUnit_Framework_TestCase
 
         /** @var SplFileInfo $file */
         foreach ( $read as $file ) {
-            $file->isDir() ? rmdir($file->getPathname()) : unlink($file->getPathname());
+            $basename = $file->getBasename();
+
+            if (!in_array($basename, self::DONT_DELETE)) {
+                $file->isDir() ? rmdir($file->getPathname()) : unlink($file->getPathname());
+            }
         }
     }
 }
