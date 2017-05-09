@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace ActiveCollab\ShepherdJobsConsumer\Test;
 
-use ActiveCollab\Exporter\ExportColumnInterface;
+use ActiveCollab\Exporter\Exportable\Table\Column\ExportColumnInterface;
 use ActiveCollab\Exporter\Test\Mocks\TableExporterMock;
 use ActiveCollab\Exporter\Test\TestCase;
 use RuntimeException;

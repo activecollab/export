@@ -8,9 +8,12 @@
 
 declare(strict_types=1);
 
-namespace ActiveCollab\Exporter;
+namespace ActiveCollab\Exporter\Exportable\Table;
 
-interface ExportAsTableInterface extends ExportableInterface
+use ActiveCollab\Exporter\Exportable\ExportableInterface;
+use ActiveCollab\Exporter\Exportable\Table\Column\ExportColumnInterface;
+
+interface ExportableAsTableInterface extends ExportableInterface
 {
     const EXPORT_TYPE = 'table';
 

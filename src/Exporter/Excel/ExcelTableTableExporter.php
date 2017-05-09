@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace ActiveCollab\Exporter\Exporter\Excel;
 
-use ActiveCollab\Exporter\ExportColumnInterface;
+use ActiveCollab\Exporter\Exportable\Table\Column\ExportColumnInterface;
 use ActiveCollab\Exporter\Exporter\Excel\ColumnFormatter\ExcelColumnFormatter;
 use PHPExcel;
 use PHPExcel_IOFactory;

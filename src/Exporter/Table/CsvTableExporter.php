@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace ActiveCollab\Exporter\Exporter\Table;
 
-use ActiveCollab\Exporter\ExportAsTableInterface;
+use ActiveCollab\Exporter\Exportable\Table\ExportableAsTableInterface;
 use ActiveCollab\Exporter\Exporter\Excel\ExcelTableTableExporter;
 use Exception;
 use PHPExcel;
@@ -19,7 +19,7 @@ class CsvTableExporter extends ExcelTableTableExporter implements CsvTableExport
 {
     public function export($object, string $path): string
     {
-        if (!($object instanceof ExportAsTableInterface)) {
+        if (!($object instanceof ExportableAsTableInterface)) {
             throw new Exception('$object argument need to be instance of: ExportAsTableInterface');
         }
 

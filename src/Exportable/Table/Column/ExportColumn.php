@@ -8,8 +8,9 @@
 
 declare(strict_types=1);
 
-namespace ActiveCollab\Exporter;
+namespace ActiveCollab\Exporter\Exportable\Table\Column;
 
+use ActiveCollab\Exporter\Exportable\Table\Column\ExportColumnInterface;
 use Exception;
 
 class ExportColumn implements ExportColumnInterface

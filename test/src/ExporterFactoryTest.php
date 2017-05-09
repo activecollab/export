@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace ActiveCollab\ShepherdJobsConsumer\Test;
 
-use ActiveCollab\Exporter\ExportAsTableInterface;
+use ActiveCollab\Exporter\Exportable\Table\ExportableAsTableInterface;
 use ActiveCollab\Exporter\Exporter\CsvExporterInterface;
 use ActiveCollab\Exporter\Exporter\Table\CsvTableExporterInterface;
 use ActiveCollab\Exporter\Exporter\Table\XlsxTableExporterInterface;
@@ -42,12 +42,12 @@ final class ExporterFactoryTest extends TestCase
     {
         return [
             [
-                ExportAsTableInterface::EXPORT_TYPE,
+                ExportableAsTableInterface::EXPORT_TYPE,
                 CsvExporterInterface::EXPORT_FORMAT,
                 CsvTableExporterInterface::class,
             ],
             [
-                ExportAsTableInterface::EXPORT_TYPE,
+                ExportableAsTableInterface::EXPORT_TYPE,
                 XlsxExporterInterface::EXPORT_FORMAT,
                 XlsxTableExporterInterface::class,
             ],

@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace ActiveCollab\Exporter;
+namespace ActiveCollab\Exporter\Exportable;
 
 interface ExportableInterface
 {

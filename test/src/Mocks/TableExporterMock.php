@@ -11,13 +11,13 @@ declare(strict_types=1);
 
 namespace ActiveCollab\Exporter\Test\Mocks;
 
-use ActiveCollab\Exporter\ExportableInterface;
-use ActiveCollab\Exporter\ExportAsTableInterface;
-use ActiveCollab\Exporter\ExportColumn;
-use ActiveCollab\Exporter\ExportColumnInterface;
+use ActiveCollab\Exporter\Exportable\ExportableInterface;
+use ActiveCollab\Exporter\Exportable\Table\ExportableAsTableInterface;
+use ActiveCollab\Exporter\Exportable\Table\Column\ExportColumn;
+use ActiveCollab\Exporter\Exportable\Table\Column\ExportColumnInterface;
 use Doctrine\Common\Inflector\Inflector;
 
-class TableExporterMock extends MockBase implements ExportableInterface, ExportAsTableInterface
+class TableExporterMock extends MockBase implements ExportableInterface, ExportableAsTableInterface
 {
     const EXPORTER_FORMAT_EXCEL = 'xlsx';
     const EXPORTER_FORMAT_CSV = 'csv';

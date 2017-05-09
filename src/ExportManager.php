@@ -10,6 +10,8 @@ declare(strict_types=1);
 
 namespace ActiveCollab\Exporter;
 
+use ActiveCollab\Exporter\Exportable\ExportableInterface;
+
 class ExportManager implements ExportManagerInterface
 {
     private $exporter_factory;
