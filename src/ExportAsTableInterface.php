@@ -10,8 +10,10 @@ declare(strict_types=1);
 
 namespace ActiveCollab\Exporter;
 
-interface ExportAsTableInterface
+interface ExportAsTableInterface extends ExportableInterface
 {
+    const EXPORT_TYPE = 'table';
+
     /**
      * @param  array                            ...$args
      * @return iterable|ExportColumnInterface[]

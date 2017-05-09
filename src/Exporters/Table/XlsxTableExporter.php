@@ -8,26 +8,30 @@
 
 declare(strict_types=1);
 
-namespace ActiveCollab\Exporter\Exporters;
+namespace ActiveCollab\Exporter\Exporters\Table;
 
 use ActiveCollab\Exporter\ExportAsTableInterface;
+use ActiveCollab\Exporter\Exporters\Excel\ExcelTableTableExporter;
+use ActiveCollab\Exporter\Exporters\TableExporterInterface;
+use ActiveCollab\Exporter\Exporters\XlsxExporterInterface;
 use Exception;
+use PHPExcel;
 
-class CsvTableExporter extends ExcelExporter
+class XlsxTableExporter extends ExcelTableTableExporter implements XlsxTableExporterInterface
 {
     public function export($object, string $path): string
     {
-        if (!($object instanceof ExportAsTableInterface)) {
+        if (!$object instanceof ExportAsTableInterface) {
             throw new Exception('$object argument need to be instance of: ExportAsTableInterface');
         }
 
-        $this->setCreator();
-        $columns = $object->getColumns();
-        $this->setColumnRow($columns, false);
+        $php_excel = $this->initializeDocument(new PHPExcel());
+
+        $active_sheet = $php_excel->setActiveSheetIndex(0);
+        $php_excel = $this->setColumnRow($php_excel, $object->getColumns());
 
         $i = 2; // Start from two because 1 is column names
 
-        $active_sheet = $this->php_excel->setActiveSheetIndex(0);
         $column_iterator = $active_sheet->getColumnIterator();
 
         foreach ($object->getRows() as $row) {
@@ -44,7 +48,7 @@ class CsvTableExporter extends ExcelExporter
             $i++;
         }
 
-        $this->save($path, 'CSV');
+        $this->save($php_excel, $path);
 
         return $path;
     }

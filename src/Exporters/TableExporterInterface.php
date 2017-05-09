@@ -6,5 +6,10 @@
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
 
-date_default_timezone_set('UTC');
-require dirname(__DIR__) . '/vendor/autoload.php';
+declare(strict_types=1);
+
+namespace ActiveCollab\Exporter\Exporters;
+
+interface TableExporterInterface extends ExporterInterface
+{
+}

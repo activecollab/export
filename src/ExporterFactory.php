@@ -16,16 +16,16 @@ use Exception;
 
 class ExporterFactory implements ExporterFactoryInterface
 {
-    const EXPORTER_NAMESPACE = 'ActiveCollab\\Exporter\\Exporters\\';
+    const EXPORTER_NAMESPACE = 'ActiveCollab\\Exporter\\Exporters';
 
     public function getExporterFor(string $type, string $format): ExporterInterface
     {
-        $class_name = self::EXPORTER_NAMESPACE . Inflector::classify("{$format}_{$type}_exporter");
+        $class_name = self::EXPORTER_NAMESPACE . '\\' . Inflector::classify($type) . '\\' . Inflector::classify("{$format}_{$type}_exporter");
 
         if (class_exists($class_name)) {
             return new $class_name;
         } else {
-            throw new Exception("Exporter doesn't exists for type:{$type} and formant:{$format}");
+            throw new Exception("Exporter doesn't exists for type '{$type}' and format '{$format}'.");
         }
     }
 }
