@@ -11,7 +11,6 @@ declare(strict_types=1);
 namespace ActiveCollab\Exporter\Exporter\Excel\ColumnFormatter;
 
 use ActiveCollab\Exporter\ExportColumnInterface;
-use ActiveCollab\Exporter\Exporter\Excel\ColumnFormatter\ExcelColumnFormatterInterface;
 use PHPExcel_Style_Alignment;
 use PHPExcel_Style_Fill;
 use PHPExcel_Style_NumberFormat;

@@ -12,9 +12,6 @@ namespace ActiveCollab\Exporter\Exporter\Table;
 
 use ActiveCollab\Exporter\ExportAsTableInterface;
 use ActiveCollab\Exporter\Exporter\Excel\ExcelTableTableExporter;
-use ActiveCollab\Exporter\Exporter\TableExporterInterface;
-use ActiveCollab\Exporter\Exporter\XlsxExporterInterface;
-use ActiveCollab\Exporter\Exporter\Table\XlsxTableExporterInterface;
 use Exception;
 use PHPExcel;
 
