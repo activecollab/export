@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace ActiveCollab\Exporter\Exporters\Excel\ColumnFormatter;
+namespace ActiveCollab\Exporter\Exporter\Excel\ColumnFormatter;
 
 use PHPExcel_Style_Alignment;
 

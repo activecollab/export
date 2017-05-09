@@ -10,13 +10,13 @@ declare(strict_types=1);
 
 namespace ActiveCollab\Exporter;
 
-use ActiveCollab\Exporter\Exporters\ExporterInterface;
+use ActiveCollab\Exporter\Exporter\ExporterInterface;
 use Doctrine\Common\Inflector\Inflector;
 use Exception;
 
 class ExporterFactory implements ExporterFactoryInterface
 {
-    const EXPORTER_NAMESPACE = 'ActiveCollab\\Exporter\\Exporters';
+    const EXPORTER_NAMESPACE = 'ActiveCollab\\Exporter\\Exporter';
 
     public function getExporterFor(string $type, string $format): ExporterInterface
     {

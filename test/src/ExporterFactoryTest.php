@@ -12,10 +12,10 @@ namespace ActiveCollab\ShepherdJobsConsumer\Test;
 
 use ActiveCollab\Exporter\ExportAsTableInterface;
 use ActiveCollab\Exporter\ExporterFactory;
-use ActiveCollab\Exporter\Exporters\CsvExporterInterface;
-use ActiveCollab\Exporter\Exporters\Table\CsvTableExporterInterface;
-use ActiveCollab\Exporter\Exporters\Table\XlsxTableExporterInterface;
-use ActiveCollab\Exporter\Exporters\XlsxExporterInterface;
+use ActiveCollab\Exporter\Exporter\CsvExporterInterface;
+use ActiveCollab\Exporter\Exporter\Table\CsvTableExporterInterface;
+use ActiveCollab\Exporter\Exporter\Table\XlsxTableExporterInterface;
+use ActiveCollab\Exporter\Exporter\XlsxExporterInterface;
 use ActiveCollab\Exporter\Test\TestCase;
 
 final class ExporterFactoryTest extends TestCase

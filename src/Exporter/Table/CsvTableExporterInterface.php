@@ -8,10 +8,10 @@
 
 declare(strict_types=1);
 
-namespace ActiveCollab\Exporter\Exporters\Table;
+namespace ActiveCollab\Exporter\Exporter\Table;
 
-use ActiveCollab\Exporter\Exporters\CsvExporterInterface;
-use ActiveCollab\Exporter\Exporters\TableExporterInterface;
+use ActiveCollab\Exporter\Exporter\CsvExporterInterface;
+use ActiveCollab\Exporter\Exporter\TableExporterInterface;
 
 interface CsvTableExporterInterface extends CsvExporterInterface, TableExporterInterface
 {

@@ -8,12 +8,13 @@
 
 declare(strict_types=1);
 
-namespace ActiveCollab\Exporter\Exporters\Table;
+namespace ActiveCollab\Exporter\Exporter\Table;
 
 use ActiveCollab\Exporter\ExportAsTableInterface;
-use ActiveCollab\Exporter\Exporters\CsvExporterInterface;
-use ActiveCollab\Exporter\Exporters\Excel\ExcelTableTableExporter;
-use ActiveCollab\Exporter\Exporters\TableExporterInterface;
+use ActiveCollab\Exporter\Exporter\CsvExporterInterface;
+use ActiveCollab\Exporter\Exporter\Excel\ExcelTableTableExporter;
+use ActiveCollab\Exporter\Exporter\TableExporterInterface;
+use ActiveCollab\Exporter\Exporter\Table\CsvTableExporterInterface;
 use Exception;
 use PHPExcel;
 

@@ -8,9 +8,9 @@
 
 declare(strict_types=1);
 
-namespace ActiveCollab\Exporter\Exporters\Excel;
+namespace ActiveCollab\Exporter\Exporter\Excel;
 
-use ActiveCollab\Exporter\Exporters\TableExporterInterface;
+use ActiveCollab\Exporter\Exporter\TableExporterInterface;
 
 interface ExcelTableExporterInterface extends TableExporterInterface
 {

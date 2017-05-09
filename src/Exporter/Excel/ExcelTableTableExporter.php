@@ -8,10 +8,11 @@
 
 declare(strict_types=1);
 
-namespace ActiveCollab\Exporter\Exporters\Excel;
+namespace ActiveCollab\Exporter\Exporter\Excel;
 
 use ActiveCollab\Exporter\ExportColumnInterface;
-use ActiveCollab\Exporter\Exporters\Excel\ColumnFormatter\ExcelColumnFormatter;
+use ActiveCollab\Exporter\Exporter\Excel\ColumnFormatter\ExcelColumnFormatter;
+use ActiveCollab\Exporter\Exporter\Excel\ExcelTableExporterInterface;
 use PHPExcel;
 use PHPExcel_IOFactory;
 

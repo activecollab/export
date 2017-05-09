@@ -8,7 +8,9 @@
 
 declare(strict_types=1);
 
-namespace ActiveCollab\Exporter\Exporters;
+namespace ActiveCollab\Exporter\Exporter;
+
+use ActiveCollab\Exporter\Exporter\ExporterInterface;
 
 interface XlsxExporterInterface extends ExporterInterface
 {
