@@ -36,6 +36,7 @@ interface ExportColumnInterface
     ];
 
     const COLUMN_ALIGNS = [
+        self::COLUMN_ALIGN_AUTO,
         self::COLUMN_ALIGN_CENTER,
         self::COLUMN_ALIGN_LEFT,
         self::COLUMN_ALIGN_RIGHT,
@@ -49,9 +50,9 @@ interface ExportColumnInterface
         self::COLUMN_WIDTH_WIDE,
     ];
 
-    public function getColumnName(): string;
+    public function getName(): string;
 
-    public function getColumnType(): string;
+    public function getType(): string;
 
     public function getWidth(): string;
 

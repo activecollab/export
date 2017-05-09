@@ -43,7 +43,7 @@ class ExcelColumnFormatter implements ExcelColumnFormatterInterface
      * @param  string                        $value
      * @return ExcelColumnFormatterInterface $this
      */
-    public function setColumnLabel(string $value): ExcelColumnFormatterInterface
+    public function setLabel(string $value): ExcelColumnFormatterInterface
     {
         $column_name = str_replace('_', ' ', $value);
         $this->active_sheet->setCellValue($this->column_key . self::COLUMN_ROW_NUMBER, $column_name);

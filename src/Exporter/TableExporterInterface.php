@@ -10,7 +10,6 @@ declare(strict_types=1);
 
 namespace ActiveCollab\Exporter\Exporter;
 
-
 interface TableExporterInterface extends ExporterInterface
 {
 }

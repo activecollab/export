@@ -44,12 +44,12 @@ abstract class ExcelTableTableExporter implements ExcelTableExporterInterface
 
             $column_formatter = new ExcelColumnFormatter($active_sheet, $key);
 
-            $column_formatter->setColumnLabel($column->getColumnName());
+            $column_formatter->setLabel($column->getName());
 
             if ($apply_formatting) {
                 $column_formatter
-                    ->setColumnLabel($column->getColumnName())
-                    ->formatType($column->getColumnType())
+                    ->setLabel($column->getName())
+                    ->formatType($column->getType())
                     ->formatAlign($column->getAlign())
                     ->formatSize($column->getWidth())
                     ->prepareForHeader();
