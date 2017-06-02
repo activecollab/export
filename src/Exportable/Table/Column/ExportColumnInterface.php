@@ -57,4 +57,8 @@ interface ExportColumnInterface
     public function getWidth(): string;
 
     public function getAlign(): string;
+
+    public function isPermanently(): bool;
+
+    public function getDependencyColumns(): iterable;
 }

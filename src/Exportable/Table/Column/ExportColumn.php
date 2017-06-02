@@ -22,11 +22,17 @@ class ExportColumn implements ExportColumnInterface
 
     private $align;
 
+    private $permanently;
+
+    private $dependency_columns;
+
     public function __construct(
         string $name,
         string $type,
         string $width = self::COLUMN_WIDTH_AUTO,
-        string $align = self::COLUMN_ALIGN_AUTO
+        string $align = self::COLUMN_ALIGN_AUTO,
+        bool $permanently = true,
+        array $dependency_columns = []
     )
     {
         if (!in_array($width, self::COLUMN_WIDTHS)) {
@@ -41,6 +47,8 @@ class ExportColumn implements ExportColumnInterface
         $this->type = $type;
         $this->width = $width;
         $this->align = $align;
+        $this->permanently = $permanently;
+        $this->dependency_columns = $dependency_columns;
     }
 
     public function getName(): string
@@ -61,5 +69,15 @@ class ExportColumn implements ExportColumnInterface
     public function getAlign(): string
     {
         return $this->align;
+    }
+
+    public function isPermanently(): bool
+    {
+        return $this->permanently;
+    }
+
+    public function getDependencyColumns(): iterable
+    {
+        return $this->dependency_columns;
     }
 }
