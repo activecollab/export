@@ -10,10 +10,10 @@ declare(strict_types=1);
 
 namespace ActiveCollab\Exporter\Exporter\Table;
 
+use ActiveCollab\Exporter\Exportable\Table\Column\ExportColumnInterface;
 use ActiveCollab\Exporter\Exportable\Table\ExportableAsTableInterface;
 use ActiveCollab\Exporter\Exporter\Excel\ExcelTableTableExporter;
 use Exception;
-use PHPExcel;
 
 class CsvTableExporter extends ExcelTableTableExporter implements CsvTableExporterInterface
 {
@@ -23,30 +23,40 @@ class CsvTableExporter extends ExcelTableTableExporter implements CsvTableExport
             throw new Exception('$object argument need to be instance of: ExportAsTableInterface');
         }
 
-        $php_excel = $this->initializeDocument(new PHPExcel());
-        $this->setColumnRow($php_excel, $object->getColumns(), false);
+        $export_handle = fopen($path, 'w');
 
-        $i = 2; // Start from two because 1 is column names
-
-        $active_sheet = $php_excel->setActiveSheetIndex(0);
-        $column_iterator = $active_sheet->getColumnIterator();
-
-        foreach ($object->getRows() as $row) {
-            $column_iterator->resetStart();
-            $cell_formatter_index = 0;
-
-            foreach ($row as $cell_value) {
-                $active_sheet->setCellValue($column_iterator->key() . $i, $cell_value);
-                $column_iterator->next();
-
-                $cell_formatter_index++;
-            }
-
-            $i++;
+        if (!$export_handle) {
+            throw new Exception("Export file is not writable {$export_handle}");
         }
 
-        $this->save($php_excel, $path, 'CSV');
+        fwrite($export_handle, chr(0xEF) . chr(0xBB) . chr(0xBF));
+        $this->setColumnRow($export_handle, $object->getColumns());
+
+        foreach ($object->getRows() as $row) {
+            foreach ($row as $row_name => &$value) {
+                if (preg_match('/^[\+|\=|\-|\@]/', (string) $value)) {
+                    $value = "'" . $value;
+                }
+            }
+
+            fputcsv($export_handle, $row, self::DEFAULT_CSV_SEPARATOR);
+        }
 
         return $path;
+    }
+
+    /**
+     * @param                                $export_handle
+     * @param ExportColumnInterface[] |array $columns
+     */
+    protected function setColumnRow($export_handle, array $columns): void
+    {
+        $column_row = [];
+
+        foreach ($columns as $column) {
+            $column_row[] = $column->getName();
+        }
+
+        fputcsv($export_handle, $column_row, self::DEFAULT_CSV_SEPARATOR);
     }
 }
