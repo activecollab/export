@@ -21,7 +21,6 @@ interface ExcelColumnFormatterInterface
     public function prepareForHeader(
         string $background = 'CCCCCC',
         PHPExcel_Style_Alignment $align = null,
-        bool $freeze = true,
         bool $filter = true,
         string $start = 'A'
     ): ExcelColumnFormatterInterface;

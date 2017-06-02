@@ -19,7 +19,7 @@ use PHPExcel_Worksheet;
 class ExcelColumnFormatter implements ExcelColumnFormatterInterface
 {
     const COLUMN_ROW_NUMBER = 1;
-    const COLUMN_FREEZE_ROW = 2;
+    const COLUMN_FREEZE_ROW = 'A2';
 
     private $active_sheet;
     private $column_key;
@@ -155,7 +155,6 @@ class ExcelColumnFormatter implements ExcelColumnFormatterInterface
      *
      * @param  string                        $background
      * @param  PHPExcel_Style_Alignment|null $align
-     * @param  bool                          $freeze
      * @param  bool                          $filter
      * @param  string                        $start
      * @return ExcelColumnFormatterInterface
@@ -163,16 +162,11 @@ class ExcelColumnFormatter implements ExcelColumnFormatterInterface
     public function prepareForHeader(
         string $background = 'CCCCCC',
         PHPExcel_Style_Alignment $align = null,
-        bool $freeze = true,
         bool $filter = true,
         string $start = 'A'
     ): ExcelColumnFormatterInterface
     {
         $column_cell = $this->column_key . self::COLUMN_ROW_NUMBER;
-
-        if ($freeze) {
-            $this->active_sheet->freezePane($this->column_key . self::COLUMN_FREEZE_ROW);
-        }
 
         if ($filter) {
             $current_cell = $start . self::COLUMN_ROW_NUMBER;
@@ -183,7 +177,6 @@ class ExcelColumnFormatter implements ExcelColumnFormatterInterface
 
         $cell->getFill()->setFillType(PHPExcel_Style_Fill::FILL_SOLID)->getStartColor()->setRGB('CCCCCC');
         $cell->getAlignment()->setHorizontal($align);
-
 
         return $this;
     }
