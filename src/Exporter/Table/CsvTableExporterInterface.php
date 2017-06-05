@@ -15,4 +15,5 @@ use ActiveCollab\Exporter\Exporter\TableExporterInterface;
 
 interface CsvTableExporterInterface extends CsvExporterInterface, TableExporterInterface
 {
+    const DEFAULT_CSV_SEPARATOR = ',';
 }
